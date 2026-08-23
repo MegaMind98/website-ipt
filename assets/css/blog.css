@@ -1,0 +1,156 @@
+.blog-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+  color: #2c3e50;
+}
+
+.blog-heading {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.blog-heading h1 {
+  margin: .2rem 0 .75rem;
+  font-family: Prata, Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+}
+
+.blog-heading > p:last-child {
+  color: #5b6570;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.blog-kicker {
+  margin: 0;
+  color: #687580;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.blog-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.blog-card,
+.blog-editor-card,
+.blog-empty {
+  overflow: hidden;
+  border: 1px solid #e1e5e8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.blog-card-image {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+.blog-card-body,
+.blog-editor-card,
+.blog-empty {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.blog-card h2 {
+  margin: .5rem 0 1rem;
+  font-family: Prata, Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  color: #687580;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.blog-excerpt {
+  color: #56616b;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.blog-content {
+  margin-top: 1.5rem;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.blog-author {
+  margin-top: 2rem;
+  color: #687580;
+  font-style: italic;
+}
+
+.blog-editor {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.blog-editor-card {
+  margin-bottom: 1.5rem;
+}
+
+.blog-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.blog-editor label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.blog-editor label > span:first-child {
+  display: block;
+  margin-bottom: .4rem;
+}
+
+.blog-editor input:not([type="checkbox"]),
+.blog-editor textarea,
+.blog-content-editor {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .75rem .85rem;
+  border: 1px solid #cfd6dc;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  font: inherit;
+}
+
+.blog-content-editor {
+  min-height: 260px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.blog-published {
+  display: flex !important;
+  align-items: center;
+  gap: .55rem;
+}
+
+.blog-published span {
+  margin: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .blog-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
