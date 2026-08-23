@@ -1,0 +1,73 @@
+---
+layout: base
+title: Blog Editor
+permalink: /admin/blog/
+---
+
+<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+<script src="https://get.mavo.io/mavo.js"></script>
+<link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
+
+<main class="blog-shell blog-admin">
+  <header class="blog-heading">
+    <p class="blog-kicker">Content Manager</p>
+    <h1>Blog Editor</h1>
+    <p>Sign in with GitHub, add or edit posts, then save. The public blog is rebuilt from the saved data.</p>
+  </header>
+
+  <section
+    class="blog-editor"
+    mv-app="blog"
+    mv-storage="https://github.com/MegaMind98/website-ipt/blob/master/data/blog.json"
+    mv-github-commit-prefix="Blog: "
+  >
+    <article class="blog-editor-card" property="post" mv-multiple>
+      <div class="blog-form-grid">
+        <label>
+          <span>Title</span>
+          <input property="title" required placeholder="Article title">
+        </label>
+
+        <label>
+          <span>Slug</span>
+          <input property="slug" placeholder="article-url-slug">
+        </label>
+
+        <label>
+          <span>Date</span>
+          <input type="date" property="date">
+        </label>
+
+        <label>
+          <span>Author</span>
+          <input property="author" value="Indra P. Tiwari">
+        </label>
+
+        <label>
+          <span>Category</span>
+          <input property="category" placeholder="Development">
+        </label>
+
+        <label>
+          <span>Featured image URL</span>
+          <input property="image" placeholder="/assets/img/example.jpg">
+        </label>
+      </div>
+
+      <label>
+        <span>Excerpt</span>
+        <textarea property="excerpt" rows="3" placeholder="Short summary shown before the article."></textarea>
+      </label>
+
+      <label>
+        <span>Content</span>
+        <div class="blog-content-editor" property="content" mv-edit-type="richtext"></div>
+      </label>
+
+      <label class="blog-published">
+        <input type="checkbox" property="published" checked>
+        <span>Published</span>
+      </label>
+    </article>
+  </section>
+</main>
