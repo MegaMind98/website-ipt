@@ -1,0 +1,23 @@
+{
+	"post": [
+		{
+			"published": true,
+			"title": "WEfsadf",
+			"slug": "dsaf",
+			"date": "2026-08-23",
+			"author": "Indra P. Tiwari",
+			"category": "Development",
+			"excerpt": "sajfl;sda alskdjf;lsa jlkdsja ;kdsja ;fldwsaf ",
+			"content": "<p>sdafdsaf safddsaf sdfasdfa sdfdsaf sdafsdfsdafasdfasdfsd</p>"
+		},
+		{
+			"published": true,
+			"title": "Jake",
+			"slug": "this-is-jake",
+			"date": "2026-08-17",
+			"author": "Indra P. Tiwari",
+			"excerpt": "Jake is jake.",
+			"content": "<p>Jake is jake.</p>"
+		}
+	]
+}
