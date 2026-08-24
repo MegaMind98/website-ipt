@@ -33,7 +33,7 @@ jobs:
       - name: Build Jekyll site
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --url "https://megamind98.github.io" --baseurl "/website-ipt"
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
