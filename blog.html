@@ -13,7 +13,12 @@ permalink: /blog/
     <p>Articles, observations and perspectives by Professor Indra P. Tiwari.</p>
   </header>
 
-  {% assign posts = site.data.blog.post | sort: "date" | reverse %}
+  {% if site.data.blog and site.data.blog.post %}
+    {% assign posts = site.data.blog.post | sort: "date" | reverse %}
+  {% else %}
+    {% assign posts = empty %}
+  {% endif %}
+
   {% if posts and posts.size > 0 %}
     <div class="blog-grid">
       {% for post in posts %}
