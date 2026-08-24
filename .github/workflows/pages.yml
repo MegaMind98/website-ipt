@@ -24,16 +24,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.7'
-          bundler-cache: true
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
-      - name: Build Jekyll site
-        env:
-          JEKYLL_ENV: production
-        run: bundle exec jekyll build --url "https://megamind98.github.io" --baseurl "/website-ipt"
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
