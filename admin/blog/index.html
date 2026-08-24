@@ -6,10 +6,10 @@ permalink: /admin/blog/
 
 <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
 <script src="https://get.mavo.io/mavo.js"></script>
-<link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}?v=3">
+<link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}?v=4">
 
 <main class="blog-admin">
-  <section class="limit">
+  <section class="limit blog-admin-limit">
     <article>
       <header>
         <h1>Blog editor</h1>
@@ -27,7 +27,7 @@ permalink: /admin/blog/
       >
         <article class="blog-editor-post" property="post" mv-multiple>
           <div class="blog-editor-post-heading">
-            <h2>Post details</h2>
+            <h2>Untitled post</h2>
             <label class="blog-published">
               <input type="checkbox" property="published" checked>
               <span>Published</span>
@@ -35,42 +35,42 @@ permalink: /admin/blog/
           </div>
 
           <div class="blog-field blog-field-full">
-            <label>Title</label>
-            <input property="title" required placeholder="Enter the post title">
+            <label for="blog-title">Title</label>
+            <input id="blog-title" property="title" required placeholder="Enter article title">
           </div>
 
           <div class="blog-form-grid">
             <div class="blog-field">
-              <label>Slug</label>
-              <input property="slug" placeholder="example-post-title">
-              <small>Used in the post link.</small>
+              <label for="blog-slug">Slug (URL)</label>
+              <input id="blog-slug" property="slug" placeholder="article-url-slug">
+              <small>Used in the article URL.</small>
             </div>
 
             <div class="blog-field">
-              <label>Date</label>
-              <input type="date" property="date">
+              <label for="blog-date">Date</label>
+              <input id="blog-date" type="date" property="date">
             </div>
 
             <div class="blog-field">
-              <label>Author</label>
-              <input property="author" value="Indra P. Tiwari">
+              <label for="blog-author">Author</label>
+              <input id="blog-author" property="author" value="Indra P. Tiwari">
             </div>
 
             <div class="blog-field">
-              <label>Category</label>
-              <input property="category" placeholder="Development">
+              <label for="blog-category">Category</label>
+              <input id="blog-category" property="category" placeholder="Development, Policy, Economics">
             </div>
           </div>
 
           <div class="blog-field blog-field-full">
-            <label>Featured image</label>
-            <input property="image" placeholder="/assets/img/example.jpg">
+            <label for="blog-image">Featured image URL</label>
+            <input id="blog-image" property="image" placeholder="https://example.com/image.jpg">
             <small>Enter a site-relative image path or an HTTPS image URL.</small>
           </div>
 
           <div class="blog-field blog-field-full">
-            <label>Excerpt</label>
-            <textarea property="excerpt" rows="4" placeholder="Write a short summary for the blog listing."></textarea>
+            <label for="blog-excerpt">Excerpt</label>
+            <textarea id="blog-excerpt" property="excerpt" rows="5" placeholder="Short summary shown on the blog listing page."></textarea>
           </div>
 
           <div class="blog-field blog-field-full">
