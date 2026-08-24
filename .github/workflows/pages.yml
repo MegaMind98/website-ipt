@@ -1,6 +1,9 @@
 name: Pages
 
 on:
+  push:
+    branches:
+      - feature/mavo-blog
   pull_request:
     branches: [master]
   workflow_dispatch:
@@ -33,13 +36,13 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Upload Pages artifact
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
 
   deploy:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
