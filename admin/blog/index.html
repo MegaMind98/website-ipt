@@ -6,7 +6,7 @@ permalink: /admin/blog/
 
 <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
 <script src="https://get.mavo.io/mavo.js"></script>
-<link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}?v=4">
+<link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}?v=5">
 
 <main class="blog-admin">
   <section class="limit blog-admin-limit">
@@ -22,62 +22,64 @@ permalink: /admin/blog/
       <section
         class="blog-editor"
         mv-app="blog"
-        mv-storage="https://github.com/MegaMind98/website-ipt/blob/master/_data/blog.json"
+        mv-storage="https://github.com/MegaMind98/website-ipt/blob/feature/mavo-blog/_data/blog.json"
         mv-github-commit-prefix="Blog: "
       >
-        <article class="blog-editor-post" property="post" mv-multiple>
-          <div class="blog-editor-post-heading">
-            <h2>Untitled post</h2>
-            <label class="blog-published">
-              <input type="checkbox" property="published" checked>
-              <span>Published</span>
-            </label>
-          </div>
-
-          <div class="blog-field blog-field-full">
-            <label for="blog-title">Title</label>
-            <input id="blog-title" property="title" required placeholder="Enter article title">
-          </div>
-
-          <div class="blog-form-grid">
-            <div class="blog-field">
-              <label for="blog-slug">Slug (URL)</label>
-              <input id="blog-slug" property="slug" placeholder="article-url-slug">
-              <small>Used in the article URL.</small>
+        <div property="post" mv-list>
+          <article class="blog-editor-post" property="post" mv-list-item>
+            <div class="blog-editor-post-heading">
+              <h2>Untitled post</h2>
+              <label class="blog-published">
+                <input type="checkbox" property="published" checked>
+                <span>Published</span>
+              </label>
             </div>
 
-            <div class="blog-field">
-              <label for="blog-date">Date</label>
-              <input id="blog-date" type="date" property="date">
+            <div class="blog-field blog-field-full">
+              <label for="blog-title">Title</label>
+              <input id="blog-title" property="title" required placeholder="Enter article title">
             </div>
 
-            <div class="blog-field">
-              <label for="blog-author">Author</label>
-              <input id="blog-author" property="author" value="Indra P. Tiwari">
+            <div class="blog-form-grid">
+              <div class="blog-field">
+                <label for="blog-slug">Slug (URL)</label>
+                <input id="blog-slug" property="slug" placeholder="article-url-slug">
+                <small>Used in the article URL.</small>
+              </div>
+
+              <div class="blog-field">
+                <label for="blog-date">Date</label>
+                <input id="blog-date" type="date" property="date">
+              </div>
+
+              <div class="blog-field">
+                <label for="blog-author">Author</label>
+                <input id="blog-author" property="author" value="Indra P. Tiwari">
+              </div>
+
+              <div class="blog-field">
+                <label for="blog-category">Category</label>
+                <input id="blog-category" property="category" placeholder="Development, Policy, Economics">
+              </div>
             </div>
 
-            <div class="blog-field">
-              <label for="blog-category">Category</label>
-              <input id="blog-category" property="category" placeholder="Development, Policy, Economics">
+            <div class="blog-field blog-field-full">
+              <label for="blog-image">Featured image URL</label>
+              <input id="blog-image" property="image" placeholder="https://example.com/image.jpg">
+              <small>Enter a site-relative image path or an HTTPS image URL.</small>
             </div>
-          </div>
 
-          <div class="blog-field blog-field-full">
-            <label for="blog-image">Featured image URL</label>
-            <input id="blog-image" property="image" placeholder="https://example.com/image.jpg">
-            <small>Enter a site-relative image path or an HTTPS image URL.</small>
-          </div>
+            <div class="blog-field blog-field-full">
+              <label for="blog-excerpt">Excerpt</label>
+              <textarea id="blog-excerpt" property="excerpt" rows="5" placeholder="Short summary shown on the blog listing page."></textarea>
+            </div>
 
-          <div class="blog-field blog-field-full">
-            <label for="blog-excerpt">Excerpt</label>
-            <textarea id="blog-excerpt" property="excerpt" rows="5" placeholder="Short summary shown on the blog listing page."></textarea>
-          </div>
-
-          <div class="blog-field blog-field-full">
-            <label>Content</label>
-            <div class="blog-content-editor" property="content" mv-edit-type="richtext" aria-label="Post content"></div>
-          </div>
-        </article>
+            <div class="blog-field blog-field-full">
+              <label>Content</label>
+              <div class="blog-content-editor" property="content" mv-edit-type="richtext" aria-label="Post content"></div>
+            </div>
+          </article>
+        </div>
       </section>
     </article>
   </section>
