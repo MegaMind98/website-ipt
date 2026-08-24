@@ -6,7 +6,7 @@ permalink: /admin/blog/
 
 <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
 <script src="https://get.mavo.io/mavo.js"></script>
-<link rel="stylesheet" href="../../assets/css/blog.css?v=6">
+<link rel="stylesheet" href="../../assets/css/blog.css?v=7">
 
 <main class="blog-admin">
   <section class="limit blog-admin-limit">
@@ -22,8 +22,10 @@ permalink: /admin/blog/
       <section
         class="blog-editor"
         mv-app="blog"
-        mv-storage="https://github.com/MegaMind98/website-ipt/blob/feature/mavo-blog/_data/blog.json"
+        mv-storage="https://github.com/MegaMind98/website-ipt/_data/blog.json"
+        mv-storage-branch="feature/mavo-blog"
         mv-github-commit-prefix="Blog: "
+        mv-plugins="tinymce"
       >
         <div property="post" mv-list>
           <article class="blog-editor-post" property="post" mv-list-item>
@@ -76,7 +78,8 @@ permalink: /admin/blog/
 
             <div class="blog-field blog-field-full">
               <label>Content</label>
-              <div class="blog-content-editor" property="content" mv-edit-type="richtext" aria-label="Post content"></div>
+              <div class="blog-content-editor tinymce" property="content"></div>
+              <small>Use the editor toolbar to format paragraphs, headings, links, and lists.</small>
             </div>
           </article>
         </div>
