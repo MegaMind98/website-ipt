@@ -100,100 +100,182 @@
   color: var(--mid-gray);
 }
 
-.blog-editor {
+.blog-editor,
+.blog-editor.mv-app {
+  display: block;
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  font-family: var(--sans);
 }
 
-.blog-editor-post {
-  position: relative;
+.blog-editor-post,
+.blog-editor [property="post"] {
+  display: block;
+  width: 100%;
   margin: 0 0 3rem;
   padding: 1.5rem 0 0;
   border-top: 1px solid var(--light-gray);
 }
 
-.blog-editor-post > h2 {
-  margin-top: 0;
+.blog-editor-post-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.blog-form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 1rem;
+.blog-editor-post-heading h2 {
+  margin: 0;
 }
 
-.blog-editor label {
-  display: block;
+.blog-form-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.blog-field,
+.blog-editor .blog-field {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0;
   margin: 0 0 1.25rem;
+}
+
+.blog-form-grid .blog-field {
+  margin-bottom: 0;
+}
+
+.blog-field-full {
+  clear: both;
+  width: 100% !important;
+}
+
+.blog-field > label,
+.blog-editor .blog-field > label {
+  display: block !important;
+  width: 100%;
+  margin: 0 0 .4rem;
   color: var(--text-color);
   font-family: var(--sans);
   font-size: var(--font-med);
   font-weight: bold;
-}
-
-.blog-editor label > span:first-child {
-  display: block;
-  margin-bottom: .35rem;
-}
-
-.blog-editor input:not([type="checkbox"]),
-.blog-editor textarea,
-.blog-content-editor {
-  width: 100%;
-  padding: .55rem .65rem;
-  border: 1px solid var(--light-gray);
-  border-radius: 0;
-  outline: none;
-  background: #fff;
-  color: var(--text-color);
-  font-family: var(--sans);
-  font-size: var(--font-med);
   line-height: 1.4;
 }
 
-.blog-editor input:not([type="checkbox"]):focus,
+.blog-field > small {
+  display: block;
+  margin-top: .35rem;
+  color: var(--mid-gray);
+  font-size: .72rem;
+}
+
+.blog-editor input[type="text"],
+.blog-editor input[type="url"],
+.blog-editor input[type="date"],
+.blog-editor input:not([type]),
+.blog-editor textarea,
+.blog-editor .blog-content-editor {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: .65rem .7rem !important;
+  border: 1px solid rgba(0, 0, 0, .28) !important;
+  border-radius: 2px !important;
+  outline: none;
+  background: #fff !important;
+  color: var(--text-color) !important;
+  font-family: var(--sans) !important;
+  font-size: .85rem !important;
+  line-height: 1.45 !important;
+  box-shadow: none !important;
+}
+
+.blog-editor input[type="date"] {
+  min-height: 2.55rem;
+}
+
+.blog-editor input:focus,
 .blog-editor textarea:focus,
-.blog-content-editor:focus,
-.blog-content-editor:focus-within {
-  border-color: var(--mid-gray);
+.blog-editor .blog-content-editor:focus,
+.blog-editor .blog-content-editor:focus-within {
+  border-color: rgba(0, 0, 0, .65) !important;
+}
+
+.blog-editor input::placeholder,
+.blog-editor textarea::placeholder {
+  color: rgba(0, 0, 0, .38);
+  opacity: 1;
 }
 
 .blog-editor textarea {
+  min-height: 6rem;
   resize: vertical;
 }
 
-.blog-content-editor {
-  min-height: 14rem;
-  font-family: var(--serif);
+.blog-editor .blog-content-editor {
+  min-height: 16rem !important;
+  padding: .85rem !important;
+  font-family: var(--serif) !important;
+  font-size: 1rem !important;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.55 !important;
 }
 
-.blog-published {
-  display: flex !important;
+.blog-published,
+.blog-editor .blog-published {
+  display: inline-flex !important;
   align-items: center;
-  gap: .5rem;
+  flex: 0 0 auto;
+  gap: .4rem;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--font-med);
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.blog-published input {
+  width: auto !important;
+  margin: 0 !important;
 }
 
 .blog-published span {
   margin: 0 !important;
 }
 
-/* Keep Mavo's controls useful without letting them dominate the site's UI. */
+/* Mavo toolbar. Keep the functionality, but contain it within the page. */
 .blog-admin .mv-bar {
-  margin: 0 0 2rem;
+  display: flex !important;
+  flex-wrap: wrap;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 2rem !important;
   font-family: var(--sans);
   font-size: var(--font-small);
 }
 
+.blog-admin .mv-bar button,
+.blog-admin .mv-bar .mv-login,
 .blog-admin .mv-add,
 .blog-admin .mv-item-bar {
-  font-family: var(--sans);
+  font-family: var(--sans) !important;
 }
 
 @media (max-width: 600px) {
   .blog-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .blog-editor-post-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
